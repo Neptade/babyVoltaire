@@ -71,3 +71,9 @@ p.alignRight{
 .text_same_line{
     display:inline;
 }
+
+/*Text Style */
+
+a.hover{
+    color: white;
+}
