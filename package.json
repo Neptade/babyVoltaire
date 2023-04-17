@@ -1,0 +1,25 @@
+{
+  "name": "projettranservse",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  }, 
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neptade/babyVoltaire.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Neptade/babyVoltaire/issues"
+  },
+  "homepage": "https://github.com/Neptade/babyVoltaire#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mariadb": "^3.1.1",
+    "nodemon": "^2.0.22"
+  }
+}
