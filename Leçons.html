@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../general.css">
+  <title>BabyVoltaire</title>
+
+  <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/album/">
+
+  <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header>
+    <nav class="navbar fixed-top navbar-light ">
+        <button class="navbar-toggler mx-4" style="color: rgb(6,119,144);" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav mx-5">
+            <li class="nav-item active">
+              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">List Exercices</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">My History !</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+  </header>
+
+  <main>
+      <div class="bg-image pt-5" 
+        style="background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg')
+        ;height: 100vh">
+        <div class="container">
+
+          
+
+          <form>
+            <label for="reponse">Choisissez une réponse :</label>
+            <select id="reponse" name="reponse">
+              <option value="">--Choisissez une réponse--</option>
+              <option value="passe">Passé</option>
+              <option value="present">Présent</option>
+              <option value="futur">Futur</option>
+            </select>
+            <button type="button" onclick="afficherLeçon()">Afficher le texte</button>
+          </form>
+        
+          <div id="texte">
+            <h2></h2>
+            <ul></ul>
+          </div>
+        
+          <script>
+            function afficherLeçon() {
+              var reponse = document.getElementById("reponse").value;
+              var titre = document.getElementById("texte").querySelector("h2");
+              var list = document.getElementById("texte").querySelector("ul");
+
+              if (reponse == "passe") {
+                titre.innerHTML = "Texte 1";
+                titre.style.color = "blue";
+                titre.style.fontSize = "24px";
+        
+                var paragraphe1 = document.createElement("p");
+                paragraphe1.innerHTML = "Paragraphe 1 du texte 1.";
+                paragraphe1.style.color = "black";
+                paragraphe1.style.fontSize = "16px";
+                document.getElementById("texte").appendChild(paragraphe1);
+        
+                var paragraphe2 = document.createElement("p");
+                paragraphe2.innerHTML = "Paragraphe 2 du texte 1.";
+                paragraphe2.style.color = "black";
+                paragraphe2.style.fontSize = "16px";
+                document.getElementById("texte").appendChild(paragraphe2);
+        
+                var paragraphe3 = document.createElement("p");
+                paragraphe3.innerHTML = "Paragraphe 3 du texte 1.";
+                paragraphe3.style.color = "black";
+                paragraphe3.style.fontSize = "16px";
+                document.getElementById("texte").appendChild(paragraphe3);
+        
+              } else if (reponse == "present") {
+                titre.innerHTML = "Le Présent de l'Indicatif";
+                titre.style.fontWeight = 'bold';
+                titre.style.color = "rgb(6,119,144)";
+                titre.style.fontSize = "24px";
+        
+                var paragraphe1 = document.createElement("p");
+                paragraphe1.innerHTML = "Les terminaisons du présent sont :";
+                paragraphe1.style.fontWeight = 'bold';
+                paragraphe1.style.color = "black";
+                paragraphe1.style.fontSize = "16px";
+                document.getElementById("texte").appendChild(paragraphe1);
+        
+                var paragraphe2 = document.createElement("li");
+                paragraphe2.innerHTML = "pour les verbes du 1er groupe : -e, -es, -e, -ons, -ez, -ent ; Exemple : j'aime, tu aimes, il aime";
+                paragraphe2.style.color = "black";
+                paragraphe2.style.fontSize = "16px";
+                document.getElementById("texte").appendChild(paragraphe2);
+        
+              } else if (reponse == "futur") {
+                titre.innerHTML = "Texte 2";
+                titre.style.color = "red";
+                titre.style.fontSize = "24px";
+        
+                var paragraphe1 = document.createElement("p");
+                paragraphe1.innerHTML = "Paragraphe 1 du texte 2.";
+                paragraphe1.style.color = "black";
+                paragraphe1.style.fontSize = "16px";
+                document.getElementById("texte").appendChild(paragraphe1);
+        
+                var paragraphe2 = document.createElement("p");
+                paragraphe2.innerHTML = "Paragraphe 2 du texte 2.";
+                paragraphe2.style.color = "black";
+                paragraphe2.style.fontSize = "16px";
+                document.getElementById("texte").appendChild(paragraphe2);
+              }
+            }
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+  </main>
+
+  <footer class="text-white py-3 test_color">
+    <div class="container"style="height: 20px">
+      <div class="center w-auto">
+        <a href="#" style="color: rgb(255,215,0);" class="text-decoration-none">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
