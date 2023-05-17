@@ -1,11 +1,17 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const dotenv = require('dotenv');
+dotenv.config({path: '.env'});
+const port = process.env.port;
+const app = express();
 const mariadb = require('mariadb')
-require('dotenv').config();
-
-const conn = mariadb.createConnection({host: process.env.dbHost, user: process.env.dbUser, password: process.env.dbPassword})
-// conn.ping().then(()=>console.log('Connection Established')).catch(err => console.log('Something went wrong'+err))
 
 
-app.listen(3000, () => console.log('Server Started'))
 
+app.get('/', (request, response) => { 
+    const filePath = path.join(env.rootDirectory)
+    response.sendFile("home.html")
+});
+
+app.listen(port, () => {
+    console.log(`Listening for requests on port ${port}`)
+})
