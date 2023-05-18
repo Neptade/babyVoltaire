@@ -1,0 +1,88 @@
+:root{
+    --blue1:rgb(135,206,235);
+    --blue2 : rgb(6,119,144);
+    --yellow: rgb(255,215,0);
+    --grey :rgb(176,196,222);
+}
+
+
+* {
+    margin:0;
+    padding: 0;
+    font-size: large;
+}
+
+
+/*Colors of the background*/
+.test_color {
+    background-color: var(--blue2);
+}
+
+nav {
+    background-color: var(--yellow);
+}
+
+/*For the blur divisions*/
+
+.blur, .blur_div{
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius:  25px;
+    padding: 2%;
+    text-align: justify;
+}
+
+
+/*To aligne items horizontally*/
+
+img.alignLeft{
+    margin-right: 15px;
+    margin-top: 15px;
+    float:left;
+    vertical-align: middle;
+    border-radius: 2%;
+}
+
+img.alignRight{
+    margin-left: 15px;
+    margin-top: 15px;
+    margin : 15px 0 0 15px;
+    float:right;
+    border-radius: 2%;
+}
+
+p.alignLeft{
+    text-align: left;
+    text-align: justify;
+    padding: 2%;
+}
+
+p.alignRight{
+    text-align: right;
+    text-align: justify;
+    padding: 2%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.text_same_line{
+    display:inline;
+}
+
+.centered-link {
+    display: block;
+    text-align: center;
+}
+
+/*Text Style */
+
+a.hover{
+    color: white;
+}
+
+.container {
+    margin-top: 50px;
+}
