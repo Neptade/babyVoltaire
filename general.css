@@ -72,6 +72,11 @@ p.alignRight{
     display:inline;
 }
 
+.centered-link {
+    display: block;
+    text-align: center;
+}
+
 /*Text Style */
 
 a.hover{
