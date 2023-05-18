@@ -86,3 +86,10 @@ a.hover{
 .container {
     margin-top: 50px;
 }
+
+/*Button styles */
+.custom-button-leçon {
+    background-color: rgb(6,119,144); /* Remplacez par votre couleur personnalisée */
+    color: #ffffff; /* Remplacez par la couleur du texte souhaitée */
+    /* Ajoutez d'autres styles personnalisés selon vos besoins */
+  }
