@@ -20,7 +20,7 @@
 
 <body>
   <header>
-    <nav class="navbar fixed-top navbar-light ">
+    <nav class="navbar fixed-top navbar-light " style="background-color: rgb(255,215,0)">
         <button class="navbar-toggler mx-4" style="color: rgb(6,119,144);" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -79,7 +79,10 @@
 
               // Determine the options for the second select menu based on the selected value
               if (selectedValue === "temps") {
-                addOption(secondSelect, "passe", "Imparfait");
+                addOption(secondSelect, "passe", "Passé simple");
+                addOption(secondSelect, "compose", "Passé composé");
+                addOption(secondSelect, "imparfait", "Imparfait");
+                addOption(secondSelect, "plusparfait", "Plus-que-Parfait");
                 addOption(secondSelect, "present", "Présent Simple");
                 addOption(secondSelect, "futur", "Futur Simple");
               } else if (selectedValue === "homonyme") {
@@ -103,8 +106,14 @@
               let text = "";
 
               if (value1 == "temps"){
-                if (value2 == "passe") {
-                  text = "<h2 style='color: rgb(6,119,144);'>L'imparfait de l'indicatif</h2><p>Les terminaisons de l'imparfait, <b>-ais, -ais, -ait, -ions, -iez, -aient</b>, s'ajoutent au <b>radical</b> du participe présent.<br>Prenons l'exemple du verbe <i>prendre</i> :<br>participe présent : <b>pren</b>ant ; → imparfait : je <b>pren</b>ais, tu <b>pren</b>ais…<br><b>Attention à ne pas oublier le -i- des terminaisons <i>-ions</i> et <i>-iez</i></b>.<br><i>Hier nous travaill<b>ions</b>, aujourd'hui nous nous reposons.<i></p>";
+                if (value2 == "imparfait") {
+                  text = "<h2 style='color: rgb(6,119,144);'>L'imparfait de l'Indicatif</h2><p>L'imparfait est un temps du passé. Il permet d'expliquer des habitudes, des faits du passé. Dans un récit, il permet de décrire un lieu, un personnage, etc.<br>Les terminaisons de l'imparfait, <b>-ais, -ais, -ait, -ions, -iez, -aient</b>, s'ajoutent au <b>radical</b> du participe présent.<br>Prenons l'exemple du verbe <i>prendre</i> :<br>participe présent : <b>pren</b>ant ; → imparfait : je <b>pren</b>ais, tu <b>pren</b>ais…<br><b>Attention à ne pas oublier le -i- des terminaisons <i>-ions</i> et <i>-iez</i></b>.<br><i>Hier nous travaill<b>ions</b>, aujourd'hui nous nous reposons.<i></p>";
+                } else if (value2 == "passe") {
+                  text = "<h2 style='color: rgb(6,119,144);'>Le Passé Simple</h2><p>Le passé simple est un temps du passé qui s'utilise surtout à l'écrit, aux <b>3èmes personnes du singulier et du pluriel</b>. Dans les récits, il est associé à l'imparfait pour une action précise, limitée dans le temps.<br>Les terminaisons du passé simple sont :<ul><li>pour les verbes du <b>1er groupe</b> : <b>-ai, -as, -a, -âmes, -âtes, -èrent </b>; Exemple : j'aimai, tu aimas, il aima, nous aimâmes, vous aimâtes, ils aimèrent</li><li>pour les verbes du <b>2e groupe</b> : <b>-is, -is, -it, -îmes, -îtes, -irent</b> ; Exemple : je finis, tu finis, il finit, nous finîmes, vous finîtes, ils finirent</li><li>pour les verbes du <b>3e groupe</b>, ils y a trois terminaisons possibles : celles du <b>2ème groupe</b> pour les verbes en <b>-ir</b> ou en <b>-re</b> ou bien pour les verbes en <b>-oir</b> : <b>-us, -us, -ut, -ûmes, -ûtes, -urent</b>. Exemple : je voulus, tu voulus, il voulut, nous voulûmes, vous voulûtes, ils voulurent</li></ul><b>Attention aux verbes tenir, venir et leurs composés ! </b> Leurs terminaisons sont : <b>-ins, -ins, -int, -înmes, -întes, -inrent</b> Exemple : venir : je vins, tu vins, ils vint, nous vînmes, vous vîntes, ils vinrent.</p>";
+                } else if (value2 == "compose") {
+                  text = "<h2 style='color: rgb(6,119,144);'>Le Passé Composé</h2><p>Le passé composé est un temps du passé. Dans un récit, il permet de rapporter des évènements qui se sont déroulés et qui sont achevés.<br>Le passé composé est un temps composé formé de <b>l'auxiliaire avoir ou être</b> au <b>présent</b> et du <b>participe passé</b> du verbe conjugué, dont les terminaisons sont, quel que soit la personne, <b>-é</b> pour les verbe du 1er groupe ou bien <b>-i</b> pour les verbes du 2ème groupe ou les verbes en -ir (finir par exemple) ou bien <b>-u</b> pour les verbes en -re et en -oir.<br>Exemple : j'ai mangé, tu as mangé, il a mangé, ...<br>Ou avec l'auxiliaire être : je suis parti, tu es parti, il est parti<br><b>Attention à l'accord du participe passé !</b> Voici ci-dessous deux fiches récapitulatives :<br></p><img src='https://i0.wp.com/data0.eklablog.com/loustics/mod_article2803113_1.jpg?zoom=2'/><img src='https://i0.wp.com/data0.eklablog.com/loustics/mod_article2803113_3.jpg?zoom=2'/>";
+                } else if (value2 == "plusparfait") {
+                  text = "<h2 style='color: rgb(6,119,144);'>Le Plus-que-Parfait</h2><p>Le plus-que-parfait est un temps du passé. Il précise qu'une action s'est déroulée avant une autre qui a déjà eu lieu dans le passé. Cette action peut être exprimée avec un passé composé, un imparfait ou un passé simple. Vous pouvez employer le plus-que-parfait lorsque vous souhaitez marquer l'antériorité d'une action terminée par rapport à une autre aussi située dans le passé. Le plus-que-parfait peut également être utilisé lorsque vous transformez une phrase avec un verbe au passé simple ou au passé composé du style direct au style indirect. <br>Le plus-que-parfait est un temps composé formé de <b>l'auxiliaire avoir ou être</b> à <b>l'imparfait</b> et du <b>participe passé</b> du verbe conjugué, dont les terminaisons sont, quel que soit la personne, <b>-é</b> pour les verbe du 1er groupe ou bien <b>-i</b> pour les verbes du 2ème groupe ou les verbes en -ir (finir par exemple) ou bien <b>-u</b> pour les verbes en -re et en -oir.</p>";
                 } else if (value2 == "present") {
                   text = "<h2 style='color: rgb(6,119,144);'>Le Présent de l'Indicatif</h2><p>Les terminaisons du présent sont :<ul><li>pour les verbes du <b>1er groupe</b> : <b>-e, -es, -e, -ons, -ez, -ent </b>; Exemple : j'aime, tu aimes, il aime</li><li>pour les verbes du <b>2e groupe</b> : <b>-is, -is, -it, -issons, -issez, -issent</b> ; Exemple : il finit, ils finissent</li><li>pour les verbes du <b>3e groupe</b> : <b>-s, -s, -t, -ons, -ez, -ent</b>. Exemple : je cours, tu cours, il court</li></ul><b>Attention aux verbes du 3e groupe </b>: ils présentent des <b>irrégularités</b> !<ul><li>Les verbes en <b>-dre</b> conservent au singulier la consonne finale d de leur radical… Exemple : prendre : je prends, il prend… sauf ceux en -indre et -soudre. Exemple : éteindre : j'éteins, il éteint</li><li> Beaucoup de verbes de ce groupe ont <b>plusieurs radicaux</b>. Exemples : je peins, nous peignons je reçois, nous recevons, ils reçoivent</li></ul></p>";
                 } else if (value2 == "futur") {
@@ -129,7 +138,7 @@
     </div>
   </main>
 
-  <footer class="text-white py-3 test_color fixed-bottom">
+  <footer class="text-white py-3 test_color fixed-bottom" style="background-color: rgb(6,119,144)">
         <a href="#" style="color: rgb(255,215,0);" class="text-decoration-none centered-link">Back to top</a>
   </footer>
 

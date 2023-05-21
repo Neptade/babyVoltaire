@@ -15,11 +15,11 @@
 
 /*Colors of the background*/
 .test_color {
-    background-color: var(--blue2);
+    background-color: rgb(6,119,144);
 }
 
 nav {
-    background-color: var(--yellow);
+    background-color: rgb(255,215,0);
 }
 
 /*For the blur divisions*/
