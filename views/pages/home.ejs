@@ -446,31 +446,39 @@ button {
 <body>
 	<!-- header section start-->
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(255,215,0);">
-        <a class="logo" href="#"><img src="/images/logo.png" alt="" width="70" height="50" class="d-inline-block align-text-top"></a>
-
-        <!--Sert juste à cacher le bouton -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-
-
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                   <a class="nav-link" href="./home.ejs">ACCUEIL</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">MON COMPTE</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">LISTE D'EXERCICES</a>
-                </li>
-                <li class="nav-item">
-                   <a class="nav-link" href="#">MES LEÇONS</a>
-                </li>
-            </ul>
-        </div>
-         <div class="login_text"><a href="login.html">CONNECTION</a></div>
+          <a class="logo" href="#"><img src="/images/logo.png" alt="" width="70" height="50" class="d-inline-block align-text-top"></a>
+  
+          <!--Sert juste à cacher le bouton -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+  
+  
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="./home.ejs">ACCUEIL</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">MON COMPTE</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">LISTE D'EXERCICES</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">MES LEÇONS</a>
+                  </li>
+              </ul>
+          </div>
+          <div><a><% if (isAuthenticated) { %>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth/Logout">DECONNEXION</a>
+            </li>
+          <% } else { %>
+            <li class="nav-item">
+              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth">CONNEXION</a>
+            </li>
+          <% } %></a></div>
     </nav>
 	<!-- header section start-->
 	<!-- banner section start-->

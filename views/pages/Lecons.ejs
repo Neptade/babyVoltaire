@@ -220,6 +220,8 @@
       <!--Sert juste à cacher le bouton -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
+
+
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
@@ -237,8 +239,16 @@
               </li>
           </ul>
       </div>
-       <div class="login_text"><a href="login.html">CONNECTION</a></div>
-    </nav>
+      <div><a><% if (isAuthenticated) { %>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth/Logout">DECONNEXION</a>
+        </li>
+      <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth">CONNEXION</a>
+        </li>
+      <% } %></a></div>
+      </nav>
   </header>
 
   <main>
