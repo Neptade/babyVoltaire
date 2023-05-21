@@ -26,7 +26,17 @@
       --grey :rgb(176,196,222);
   }
 
-  * {
+
+  /*only for the nav bar*/
+  ul.nav_bar,
+  li.nav_bar,
+  ol.nav_bar {
+       margin: 0px;
+       padding: 0px;
+       list-style: none;
+  }
+  /**/
+    * {
       margin:0;
       padding: 0;
       font-size: large;
@@ -142,7 +152,7 @@
       color: white;
   }
 
-  a, .btn {
+  a{
       text-decoration: none !important;
       outline: none !important;
       -webkit-transition: all .3s ease-in-out;
@@ -224,27 +234,27 @@
 
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-              <li class="nav-item">
+          <ul class="navbar-nav nav_bar">
+              <li class="nav-item nav_bar">
                  <a class="nav-link" href="./home.ejs">ACCUEIL</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item nav_bar">
                  <a class="nav-link" href="#">MON COMPTE</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item nav_bar">
                  <a class="nav-link" href="#">LISTE D'EXERCICES</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item nav_bar">
                  <a class="nav-link" href="#">MES LEÇONS</a>
               </li>
           </ul>
       </div>
       <div><a><% if (isAuthenticated) { %>
-        <li class="nav-item">
+        <li class="nav-item nav_bar">
           <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth/Logout">DECONNEXION</a>
         </li>
       <% } else { %>
-        <li class="nav-item">
+        <li class="nav-item nav_bar">
           <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth">CONNEXION</a>
         </li>
       <% } %></a></div>
@@ -254,7 +264,7 @@
   <main>
       <div class="bg-image pt-5 test_footer" 
         style="background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg')
-        ;height: 160vh">
+        ;height: 170vh">
         <div class="container">
           <h1 style='color: rgb(6,119,144);' class="text-center">Leçons</h1><br>
           <form>
