@@ -135,64 +135,31 @@
         style="background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg')
         ;height: 100vh">
         <div class="container">
-            <form action="/exercices/tps_exo" method="GET">
-                <label for="classe">Quelle est votre class ?</label>
-                <select id="classe" onchange="updateTPS()">
-                <option value="">Niveau</option>
-                <option value="cp">CP</option>
-                <option value="ce1">CE1</option>
-                <option value="ce2">CE2</option>
-                <option value="cm1">CM1</option>
-                <option value="cm2">CM2</option>
-                </select>
+                
+          <table class="table table-striped table-bordered table-hover">
+            <tr>
+                <td>Ennoncé</td>
+            </tr>
+                <tr>
+                    <td><%= exercices[0].ennonce%></td>
+                </tr>
+          </table>      
 
-                <label for="temps">Sur quel temps voulez-vous vous exercer ?</label>
-                <select id="temps" name="temps">
-                <option value="">-- Temps --</option>
-                </select>
-                <button type="submit" value = "SEND">Commencer les exercices !</button>
-            </form>          
+          <form action="/exercices/verification/reponse" method="POST">
+                <input type="hidden" name="exerciceId" value="<%= exercices[0].qID%>">
+                <% for (var exo of exercices) { %>
+                    <input type="checkbox" id="answer" name="answer" value="<%= exo.reponse%>" onclick="onlyOne(this)"/>
+                    <label>Réponse : <%= exo.reponse %></label><br>
+                <% } %>
+                <button type="submit" value ="SEND">Valider</button>
+          </form>
+
             <script>
-                function updateTPS() {
-                var firstSelect = document.getElementById("classe");
-                var secondSelect = document.getElementById("temps");
-
-                // Clear existing options
-                secondSelect.innerHTML = "";
-
-                // Get the selected value from the first select menu
-                var selectedValue = classe.value;
-
-                // Determine the options for the second select menu based on the selected value
-                if (selectedValue === "cp") {
-                    addOption(secondSelect, "Présent", "Présent Simple");
-                } else if (selectedValue === "ce1") {
-                    addOption(secondSelect, "present", "Présent Simple");
-                    addOption(secondSelect, "futur", "Futur Simple");
-                } else if (selectedValue === "ce2") {
-                    addOption(secondSelect, "imparfait", "Imparfait");
-                    addOption(secondSelect, "present", "Présent Simple");
-                    addOption(secondSelect, "futur", "Futur Simple");
-                } else if (selectedValue === "cm1") {
-                    addOption(secondSelect, "compose", "Passé composé");
-                    addOption(secondSelect, "imparfait", "Imparfait");
-                    addOption(secondSelect, "present", "Présent Simple");
-                    addOption(secondSelect, "futur", "Futur Simple");
-                } else if (selectedValue === "cm2") {
-                    addOption(secondSelect, "passe", "Passé simple");
-                    addOption(secondSelect, "compose", "Passé composé");
-                    addOption(secondSelect, "imparfait", "Imparfait");
-                    addOption(secondSelect, "plusparfait", "Plus-que-Parfait");
-                    addOption(secondSelect, "present", "Présent Simple");
-                    addOption(secondSelect, "futur", "Futur Simple");
-                }
-                }
-
-                function addOption(selectElement, value, text) {
-                var option = document.createElement("option");
-                option.value = value;
-                option.text = text;
-                selectElement.appendChild(option);
+                function onlyOne(checkbox) {
+                    var checkboxes = document.getElementsByName('answer')
+                    checkboxes.forEach((item) => {
+                        if (item !== checkbox) item.checked = false
+                    })
                 }
             </script>
       </div>
