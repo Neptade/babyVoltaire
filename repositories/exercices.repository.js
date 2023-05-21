@@ -20,7 +20,7 @@ module.exports = {
             let sql = "Select reponse from questions where qID = ?";
             const [rows, fields] = await conn.execute(sql, [id]);
             conn.release();
-            return (rows == answer);
+            return (rows[0].reponse == answer);
         } catch (err) {
             console.log(err);
             throw err;

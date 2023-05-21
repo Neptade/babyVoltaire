@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const exoRepo = require("../repositories/exercices.repository");
 const path = require('path');
+const flash = require('express-flash');
 
 router.get("/", exercicesRootAction);
 /*router.get("/:qID/:answer", exercicesGetAnswer);*/
 
-async function exercicesRootAction(req, res) {
+async function exercicesRootAction(request, response) {
     const filePath = path.join(process.env.rootDirectory, "/views/pages/exercices.ejs");
-    response.render(filePath, {"exercices": exercices});
+    response.render(filePath);
 }
 
 router.get("/tps_exo", exercicesGetExo);
@@ -19,23 +20,28 @@ async function exercicesGetExo(request, response) {
     response.render(filePath, {"exercices": exo});
 }
 
-router.get("/")
-
 router.post("/verification/answer", exoCheckAnswer);
 
 async function exoCheckAnswer(request, response) {
     var id = request.body.exerciceId;
     var answer = request.body.answer;
-    var correct = await exoRepo.checkExerciceAnswer(id, answer);
+    var correct = await exoRepo.checkExercice(id, answer);
     if (correct) {
-        const filePath = path.join(process.env.rootDirectory, "/views/pages/home.ejs");
-        response.send('Bonne réponse !');
+        response.flash('success','Bonne réponse !');
+        
     }else{
-        const filePath = path.join(process.env.rootDirectory, "/views/pages/home.ejs");
-        response.send('Mauvaise réponse. Réessayez !');
+        response.flash('failure','Mauvaise réponse. Réessayez !');
     }
+    const filePath = path.join(process.env.rootDirectory, "/views/pages/home.ejs");
+    response.render(filePath);
 }
 
+router.get("/lecons", leconShowAction);
+
+function leconShowAction(request, response){
+    const filePath = path.join(process.env.rootDirectory, "/views/pages/Lecons.ejs");
+    response.render(filePath);
+}
 
 /*
 async function exercicesGetAnswer(request, response) {
