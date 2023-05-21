@@ -6,7 +6,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
-  <link rel="stylesheet" href="../general.css">
   <title>BabyVoltaire</title>
 
   <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/album/">
@@ -15,6 +14,95 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+<style type="text/css">
+  :root{
+      --blue1:rgb(135,206,235);
+      --blue2 : rgb(6,119,144);
+      --yellow: rgb(255,215,0);
+      --grey :rgb(176,196,222);
+  }
+
+  * {
+      margin:0;
+      padding: 0;
+      font-size: large;
+  }
+
+  /*Colors of the background*/
+  .test_color {
+      background-color: rgb(6,119,144);
+  }
+
+  nav {
+      background-color: rgb(255,215,0);
+  }
+
+  /*For the blur divisions*/
+
+  .blur, .blur_div{
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius:  25px;
+      padding: 2%;
+      text-align: justify;
+  }
+
+
+  /*To aligne items horizontally*/
+
+  img.alignLeft{
+      margin-right: 15px;
+      margin-top: 15px;
+      float:left;
+      vertical-align: middle;
+      border-radius: 2%;
+  }
+
+  img.alignRight{
+      margin-left: 15px;
+      margin-top: 15px;
+      margin : 15px 0 0 15px;
+      float:right;
+      border-radius: 2%;
+  }
+
+  p.alignLeft{
+      text-align: left;
+      text-align: justify;
+      padding: 2%;
+  }
+
+  p.alignRight{
+      text-align: right;
+      text-align: justify;
+      padding: 2%;
+  }
+
+  .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .text_same_line{
+      display:inline;
+  }
+
+  .centered-link {
+      display: block;
+      text-align: center;
+  }
+
+  /*Text Style */
+
+  a.hover{
+      color: white;
+  }
+
+  .container {
+      margin-top: 50px;
+  }
+</style>
 
 </head>
 
