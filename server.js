@@ -8,10 +8,8 @@ const mariadb = require('mariadb');
 
 
 
-
-
 app.get('/', (request, response) => { 
-    const filePath = path.join(process.env.rootDirectory, "/views/pages/home.ejs")
+    const filePath = path.join(process.env.rootDirectory, "/views/pages/Lecons.ejs")
     response.render(filePath)
 });
 
