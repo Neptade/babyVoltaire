@@ -124,7 +124,7 @@
                 <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">List Exercices</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="./Leçons.ejs">Leçons</a>
+              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/">Leçons</a>
             </li>
           </ul>
         </div>
@@ -136,9 +136,7 @@
     <section class="py-5 text-center container test">
       <div class="row py-lg-5">
         <div class="col-lg-10 col-md-8 mx-auto mt-5">
-          <% for (var m of membres) { %>
-          <h1 class="text_same_line font-weight-bold text-white">Information de l'utilisateur <%= m.mID%></h1>
-          <% } %> 
+          <h1 class="text_same_line font-weight-bold text-white">Information de l'utilisateur <%= membres[0].mID%></h1>
       </div>
     </section>
     </div>
