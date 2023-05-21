@@ -1,164 +1,580 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <title>BabyVoltaire</title>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/album/">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
-  <!-- Bootstrap core CSS -->
+<!-- site metas -->
+<title>Accueil</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">	
+
+
+<link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/album/">
+
+<!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-<style type="text/css">
-  :root{
-      --blue1:rgb(135,206,235);
-      --blue2 : rgb(6,119,144);
-      --yellow: rgb(255,215,0);
-      --grey :rgb(176,196,222);
-  }
-
-  * {
-      margin:0;
-      padding: 0;
-      font-size: large;
-  }
-
-  /*Colors of the background*/
-  .test_color {
-      background-color: rgb(6,119,144);
-  }
-
-  nav {
-      background-color: rgb(255,215,0);
-  }
-
-  /*For the blur divisions*/
-
-  .blur, .blur_div{
-      background-color: rgba(255, 255, 255, 0.6);
-      border-radius:  25px;
-      padding: 2%;
-      text-align: justify;
-  }
+<style>
+/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 
-  /*To aligne items horizontally*/
+/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
 
-  img.alignLeft{
-      margin-right: 15px;
-      margin-top: 15px;
-      float:left;
-      vertical-align: middle;
-      border-radius: 2%;
-  }
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
-  img.alignRight{
-      margin-left: 15px;
-      margin-top: 15px;
-      margin : 15px 0 0 15px;
-      float:right;
-      border-radius: 2%;
-  }
+/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
+ 2) font-family: 'Poppins', sans-serif;
 
-  p.alignLeft{
-      text-align: left;
-      text-align: justify;
-      padding: 2%;
-  }
 
-  p.alignRight{
-      text-align: right;
-      text-align: justify;
-      padding: 2%;
-  }
+/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
-  .center {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+:root{
+     --blue1:rgb(135,206,235);
+     --blue2 : rgb(6,119,144);
+     --yellow: rgb(255,215,0);
+     --grey :rgb(176,196,222);
+ }
 
-  .text_same_line{
-      display:inline;
-  }
+* {
+     box-sizing: border-box !important;
+     transition: ease all 0.5s;
+}
 
-  .centered-link {
-      display: block;
-      text-align: center;
-  }
+html {
+     scroll-behavior: smooth;
+}
 
-  /*Text Style */
+body {
+     color: #666666;
+     font-size: 14px;
+     font-family: Poppins;
+     line-height: 1.80857;
+     font-weight: normal;
+     overflow-x: hidden;
+     background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg');
+     height: 100vh"
+}
 
-  a.hover{
-      color: white;
-  }
+a {
+     color: #1f1f1f;
+     text-decoration: none !important;
+     outline: none !important;
+     -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     -ms-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+}
 
-  .container {
-      margin-top: 50px;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+     letter-spacing: 0;
+     font-weight: normal;
+     position: relative;
+     padding: 0 0 10px 0;
+     font-weight: normal;
+     line-height: normal;
+     color: #111111;
+     margin: 0
+}
+
+h1 {
+     font-size: 24px
+}
+
+h2 {
+     font-size: 22px
+}
+
+h3 {
+     font-size: 18px
+}
+
+h4 {
+     font-size: 16px
+}
+
+h5 {
+     font-size: 14px
+}
+
+h6 {
+     font-size: 13px
+}
+
+*,
+*::after,
+*::before {
+     -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+     color: #212121;
+     text-decoration: none!important;
+     opacity: 1
+}
+
+button:focus {
+     outline: none;
+}
+
+ul,
+li,
+ol {
+     margin: 0px;
+     padding: 0px;
+     list-style: none;
+}
+
+p {
+     margin: 20px;
+     font-weight: 300;
+     font-size: 15px;
+     line-height: 24px;
+}
+
+a {
+     color: #222222;
+     text-decoration: none;
+     outline: none !important;
+}
+
+a,
+.btn {
+     text-decoration: none !important;
+     outline: none !important;
+     -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     -ms-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+}
+
+img {
+     max-width: 100%;
+     height: auto;
+}
+
+ :focus {
+     outline: 0;
+}
+
+.paddind_bottom_0 {
+     padding-bottom: 0 !important;
+}
+
+.btn-custom {
+     margin-top: 20px;
+     background-color: transparent !important;
+     border: 2px solid #ddd;
+     padding: 12px 40px;
+     font-size: 16px;
+}
+
+.lead {
+     font-size: 18px;
+     line-height: 30px;
+     color: #767676;
+     margin: 0;
+     padding: 0;
+}
+
+.form-control:focus {
+     border-color: #ffffff !important;
+     box-shadow: 0 0 0 .2rem rgba(255, 255, 255, .25);
+}
+
+.navbar-form input {
+     border: none !important;
+}
+
+.badge {
+     font-weight: 500;
+}
+
+blockquote {
+     margin: 20px 0 20px;
+     padding: 30px;
+}
+
+button {
+     border: 0;
+     margin: 0;
+     padding: 0;
+     cursor: pointer;
+}
+
+.full {
+     float: left;
+     width: 100%;
+}
+
+.layout_padding {
+     padding-top: 90px;
+     padding-bottom: 0px;
+}
+
+.padding_0{
+     padding: 0px;
+}
+
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--blue2);
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #000000;
+}
+
+.logo {
+    width: 40%;
+    float: left;
+}
+
+.login_text{
+     width: 8%;
+     float: left;
+     font-size: 16px;
+     color: #1898b8;
+}
+
+.login_text a{
+     color: #1898b8;
+}
+
+.login_text a:hover{
+     color: #676868;
+}
+
+.banner_section {
+    width: 100%;
+    float: left;
+    background-color : var(--blue2);
+    height: auto;
+    padding-bottom: 90px;
+    background-size: cover;
+}
+
+.best_taital{
+     width: 100%;
+     float: left;
+     font-size: 60px;
+     color: #ffffff;
+     text-align: center;
+}
+
+.email_bt {
+    width: 70%;
+    float: left;
+    font-size: 16px;
+    color: #c3c2c2;
+    background-color: #ffffff;
+    text-align: left;
+    padding-left: 15px;
+    height: 50px;
+    border: 0px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.subscribe_bt {
+    width: 30%;
+    background-color: #313233;
+    float: right;
+    padding: 9px 14px;
+    color: #fff;
+    height: 50px;
+    font-size: 16px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.subscribe_bt a {
+    color: #ffffff;
+}
+
+.box_main {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 30px !important;
+    display: flex;
+}
+
+.there_text {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    color: #ffffff;
+    padding-top: 50px;
+    display: flex;
+}
+
+.bt_main{
+     width: 20%;
+     margin: 0 auto;
+     text-align: center;
+}
+
+.discover_bt {
+    width: 100%;
+    float: left;
+    margin-top: 50px;
+}
+
+.discover_bt a{
+     width: 100%;
+     float: left;
+     font-size: 18px;
+     color: var(--blue2);
+     text-align: center;
+     padding: 10px 0px;
+     background-color: var(--yellow);
+}
+.discover_bt a:hover{
+     color: #252525;
+     background-color: #ffffff;
+}
+
+.section{
+     width: 100%;
+     float: left;
+}
+
+.job_section{
+     width: 70%;
+     float: right;
+}
+
+.jobs_text{
+     width: 100%;
+     float: left;
+     font-size: 46px;
+     color: #252525;
+
+}
+
+.dummy_text{
+     width: 100%;
+     float: left;
+     font-size: 20px;
+     color: #252525;
+     margin-left: 0px;
+}
+
+.apply_bt {
+    width: 45%;
+    float: left;
+    margin-top: 50px;
+}
+
+.apply_bt a{
+     width: 100%;
+     float: left;
+     font-size: 18px;
+     color: var(--yellow);
+     text-align: center;
+     padding: 10px 0px;
+     background-color: var(--blue2);
+}
+.apply_bt a:hover {
+    color: #fff;
+    background-color: #000000;
+}
+
+.image_1{
+     width: 100%;
+     float: left;
+}
+
+.job_section_2{
+     width: 70%;
+     float: left;
+}
+
+.footer_section {
+    width: 100%;
+    float: left;
+    background-color: #00aeef;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 60px;
+}
+
+.subscribr_text{
+     width: 100%;
+     float: left;
+     font-size: 30px;
+     color: #ffffff;
+}
+
+
+
 </style>
 
+
 </head>
-
 <body>
-  <header>
-    <nav class="navbar fixed-top navbar-light ">
-        <button class="navbar-toggler mx-4" style="color: rgb(6,119,144);" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+	<!-- header section start-->
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(255,215,0);">
+        <a class="logo" href="#"><img src="/images/logo.png" alt="" width="70" height="50" class="d-inline-block align-text-top"></a>
+
+        <!--Sert juste à cacher le bouton -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+
+
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-5">
-            <li class="nav-item active">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/home/">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">List Exercices</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="./Leçons.ejs">Leçons</a>
-            </li>
-          </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                   <a class="nav-link" href="./home.ejs">ACCUEIL</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="#">MON COMPTE</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="#">LISTE D'EXERCICES</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link" href="#">MES LEÇONS</a>
+                </li>
+            </ul>
         </div>
-      </nav>
-  </header>
-
-  <main>
-    <div class="test_color">
-    <section class="py-5 text-center container test">
-      <div class="row py-lg-5">
-        <div class="col-lg-10 col-md-8 mx-auto mt-5">
-          <h1 class="text_same_line font-weight-bold text-white">Welcome to </h1>
-          <h1 class="text_same_line font-weight-bold" style="color: rgb(255,215,0);">BabyVoltaire</h1>
-          <h1 class="text_same_line font-weight-bold text-white"> !</h1>
-          <p class="lead text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt corporis non repellat? Obcaecati velit laboriosam, tenetur dicta itaque unde nesciunt.</p>
-          <a href="/home/list" style="color: white">Lister les utilisateurs</a>
-        </div>
-      </div>
-    </section>
-    </div>
-
-    <div class="bg-image pt-5" 
-          style="background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg')
-          ;height: 100vh">
-      <div class="container">
-        
-      </div>
-    </div>
-
-  </main>
-
-  <footer class="text-white py-3 test_color fixed-bottom">
-        <a href="#" style="color: rgb(255,215,0);" class="text-decoration-none centered-link">Back to top</a>
-  </footer>
-
+         <div class="login_text"><a href="login.html">ME CONNECTER</a></div>
+    </nav>
+	<!-- header section start-->
+	<!-- banner section start-->
+	<div class="banner_section layout_padding">
+		<div class="container">
+            <h1 class="best_taital" style="color: rgb(255,215,0);">BabyVoltaire, </h1>
+			<h1 class="best_taital">Bienvenue à bord !</h1>
+		    <p class="there_text">Rejoignez-nous dès maintenant et 
+                permettez à votre enfant de découvrir l'univers magique de BabyVoltaire. 
+                Ensemble, nous éveillerons leur amour pour la langue, renforcerons leur 
+                confiance en eux et leur offrirons des compétences linguistiques qui les accompagneront tout au long de leur vie.
+            </p>
+		    <div class="bt_main">
+		    	<div class="discover_bt"><a href="#">Commencez !</a></div>
+		    </div>
+		</div>
+	</div>
+	<!-- banner section end-->
+	<!-- marketing section start-->
+	<div class="marketing_section layout_padding">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="job_section">
+					    <h1 class="jobs_text">Qu'est ce que Baby Voltaire ?</h1>
+					    <p class="dummy_text">BabyVoltaire est bien plus qu'un simple site Internet, c'est une expérience 
+                            d'apprentissage conçue spécialement pour les enfants. Notre mission est d'éveiller leur 
+                            curiosité, de stimuler leur imagination et de leur 
+                            ouvrir le portes de la connaissance à travers une approche ludique de l'apprentissage de la langue.</p>
+					    <div class="apply_bt"><a href="#">S'inscrire</a></div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="image_1 padding_0"><img src="images/enfant.jpeg"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- marketing section end-->
+	<!-- Industrial section start-->
+	<div class="marketing_section layout_padding">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="image_1 padding_0"><img src="images/écoliers.jpg"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="job_section_2">
+					    <h1 class="jobs_text">Pour qui ?</h1>
+					    <p class="dummy_text">BabyVoltaire est spécialement conçu pour les enfants du CP jusqu'à la 6e année. 
+                            Que votre enfant commence tout juste son parcours éducatif ou qu'il soit déjà un apprenant en herbe, 
+                            BabyVoltaire lui offre un environnement stimulant et divertissant pour développer ses compétences linguistiques.</p>
+					    <div class="apply_bt"><a href="#">S'inscrire</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Industrial section end-->
+	<!-- Corporate section start-->
+	<div class="marketing_section layout_padding">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="job_section">
+					    <h1 class="jobs_text">Pourquoi nous choisir ?</h1>
+					    <p class="dummy_text">Chez BabyVoltaire, nous comprenons que chaque enfant est unique, 
+                            avec ses propres besoins et rythmes d'apprentissage. 
+                            C'est pourquoi notre plateforme offre une progression personnalisée, 
+                            permettant à chaque enfant d'évoluer à son propre rythme. 
+                            </p>
+					    <div class="apply_bt"><a href="#">S'inscrire</a></div>
+					</div>
+				</div>
+				<div class="col-md-6 padding_0">
+					<div class="image_1"><img src="images/enfant_reflechit.jpg"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Corporate section end-->
+	<!-- Government section start-->
+	<div class="marketing_section layout_padding">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 padding_0">
+					<div class="image_1"><img src="images/développeurs.jpg"></div>
+				</div>
+				<div class="col-md-6">
+					<div class="job_section_2">
+					    <h1 class="jobs_text">Notre équipe</h1>
+					    <p class="dummy_text"> Nous sommes un groupe de quatre étudiants passionnés par l'éducation et 
+                            déterminés à offrir aux enfants une expérience d'apprentissage exceptionnelle. 
+                            Ensemble, nous avons réuni nos compétences et nos idées pour donner vie à BabyVoltaire.</p>
+					    <div class="apply_bt"><a href="#">S'inscrire</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Government section end-->  
+	<!-- footer section end-->
+     
 </body>
 </html>
