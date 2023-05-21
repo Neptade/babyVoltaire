@@ -145,8 +145,8 @@
                 </tr>
           </table>      
 
-          <form action="/exercices/verification/reponse" method="POST">
-                <input type="hidden" name="exerciceId" value="<%= exercices[0].qID%>">
+          <form action="/exercices/verification/answer" method="POST">
+            <input type="hidden" name="exerciceId" value="<%=exercices[0].qID%>">
                 <% for (var exo of exercices) { %>
                     <input type="checkbox" id="answer" name="answer" value="<%= exo.reponse%>" onclick="onlyOne(this)"/>
                     <label>Réponse : <%= exo.reponse %></label><br>
