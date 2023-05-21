@@ -19,7 +19,7 @@ module.exports = {
     async getMemberData(mID){
         try{
             let conn = await pool.getConnection();
-            let sql = "select email, tempsVerbe, scoreMoyen, quantiteTravail from membres join travail on membres.mID = travail.mID where membres.mID = ?";
+            let sql = "select membres.mID, email, tempsVerbe, scoreMoyen, quantiteTravail from membres join travail on membres.mID = travail.mID where membres.mID = ?";
             const [rows, fields] = await conn.execute(sql,[mID]);
             conn.release();
             return rows;

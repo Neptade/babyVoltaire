@@ -8,7 +8,9 @@ router.get("/", (request, response)=> {
     response.render(filePath)
 })
 router.get("/list", memberListAction);
-router.get("/membreData")
+router.get("/membreData/", memberDataListAction)
+// router.get("/membre/create", membreCreateAction)
+// router.post("/membre/add", membreAddAction)
 
 async function memberListAction(request, response){
     var membres = await memberRepo.getAllMembers()
@@ -17,8 +19,9 @@ async function memberListAction(request, response){
 }
 
 async function memberDataListAction(request, response){
-    var member = await memberRepo.getMemberData(request.params.mID);
-    
+    var membre = await memberRepo.getMemberData(request.query.mID);
+    const filePath = path.join(process.env.rootDirectory, "/views/pages/membreData.ejs");
+    response.render(filePath, {"membres": membre});
 }
 
 module.exports = router;
