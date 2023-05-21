@@ -16,6 +16,9 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 <style type="text/css">
+  @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+  @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
   :root{
       --blue1:rgb(135,206,235);
       --blue2 : rgb(6,119,144);
@@ -27,6 +30,18 @@
       margin:0;
       padding: 0;
       font-size: large;
+      box-sizing: border-box !important;
+      transition: ease all 0.5s;
+  }
+  
+  *, *::after, *::before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  
+  html {
+      scroll-behavior: smooth;
   }
 
   /*Colors of the background*/
@@ -36,6 +51,17 @@
 
   nav {
       background-color: rgb(255,215,0);
+  }
+
+  body {
+     color: #666666;
+     font-size: 14px;
+     font-family: Poppins;
+     line-height: 1.80857;
+     font-weight: normal;
+     overflow-x: hidden;
+     background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg');
+     height: 100vh"
   }
 
   /*For the blur divisions*/
@@ -102,16 +128,32 @@
     padding-bottom:50vh;
   }
   /*Text Style */
-
+  a {
+     color: #1f1f1f;
+     text-decoration: none !important;
+     outline: none !important;
+     -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     -ms-transition: all .3s ease-in-out;
+     -o-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+  }
   a.hover{
       color: white;
   }
 
-  .container {
-      margin-top: 50px;
+  a, .btn {
+      text-decoration: none !important;
+      outline: none !important;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
   }
 
-  .test_footer{
+  .container {
+      margin-top: 50px;
   }
 
   .btn_lecon{
@@ -130,33 +172,73 @@
   color: rgb(6,119,144);
   }
 
+  /*Nav bar*/
+  .navbar-form input {
+      border: none !important;
+  }
+  .navbar-light .navbar-nav .nav-link {
+      color: var(--blue2);
+  }
+
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 15px;
+      padding-left: 15px;
+      font-size: 16px;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+      color: #000000;
+  }
+
+  .logo {
+      width: 40%;
+      float: left;
+  }
+  .login_text{
+     width: 8%;
+     float: left;
+     font-size: 16px;
+     color: #1898b8;
+  }
+
+  .login_text a{
+      color: #1898b8;
+  }
+
+  .login_text a:hover{
+      color: #676868;
+  }
 </style>
 
 </head>
 
 <body>
   <header>
-    <nav class="navbar fixed-top navbar-light " style="background-color: rgb(255,215,0)">
-        <button class="navbar-toggler mx-4" style="color: rgb(6,119,144);" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-5">
-            <li class="nav-item active">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">List Exercices</a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(255,215,0);">
+      <a class="logo" href="#"><img src="/images/logo.png" alt="" width="70" height="50" class="d-inline-block align-text-top"></a>
+
+      <!--Sert juste à cacher le bouton -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                 <a class="nav-link" href="./home.ejs">ACCUEIL</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">My History !</a>
-            </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">MON COMPTE</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">LISTE D'EXERCICES</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">MES LEÇONS</a>
+              </li>
           </ul>
-        </div>
-      </nav>
+      </div>
+       <div class="login_text"><a href="login.html">CONNECTION</a></div>
+    </nav>
   </header>
 
   <main>
