@@ -93,6 +93,19 @@
       text-align: center;
   }
 
+  img.petite_img{
+    max-width : 45%;
+    height : auto;
+  }
+
+  img.add_padding{
+    padding-bottom:50vh;
+  }
+
+  .spacer{
+    margin-bottom: 300px; /* how high is your footer */
+    visibility: hidden; 
+  }
   /*Text Style */
 
   a.hover{
@@ -102,6 +115,7 @@
   .container {
       margin-top: 50px;
   }
+
 </style>
 
 </head>
@@ -134,10 +148,9 @@
   <main>
       <div class="bg-image pt-5" 
         style="background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg')
-        ;height: 100vh">
+        ;height: 130vh">
         <div class="container">
           <form>
-
             <label for="theme">Choissez un thème:</label>
             <select id="theme" onchange="updateSecondSelect()">
               <option value="">--Thème--</option>
@@ -153,7 +166,7 @@
           </form>
         
           <div id="output"></div>
-        
+          
           <script>
             function updateSecondSelect() {
               var firstSelect = document.getElementById("theme");
@@ -199,7 +212,7 @@
                 } else if (value2 == "passe") {
                   text = "<h2 style='color: rgb(6,119,144);'>Le Passé Simple</h2><p>Le passé simple est un temps du passé qui s'utilise surtout à l'écrit, aux <b>3èmes personnes du singulier et du pluriel</b>. Dans les récits, il est associé à l'imparfait pour une action précise, limitée dans le temps.<br>Les terminaisons du passé simple sont :<ul><li>pour les verbes du <b>1er groupe</b> : <b>-ai, -as, -a, -âmes, -âtes, -èrent </b>; Exemple : j'aimai, tu aimas, il aima, nous aimâmes, vous aimâtes, ils aimèrent</li><li>pour les verbes du <b>2e groupe</b> : <b>-is, -is, -it, -îmes, -îtes, -irent</b> ; Exemple : je finis, tu finis, il finit, nous finîmes, vous finîtes, ils finirent</li><li>pour les verbes du <b>3e groupe</b>, ils y a trois terminaisons possibles : celles du <b>2ème groupe</b> pour les verbes en <b>-ir</b> ou en <b>-re</b> ou bien pour les verbes en <b>-oir</b> : <b>-us, -us, -ut, -ûmes, -ûtes, -urent</b>. Exemple : je voulus, tu voulus, il voulut, nous voulûmes, vous voulûtes, ils voulurent</li></ul><b>Attention aux verbes tenir, venir et leurs composés ! </b> Leurs terminaisons sont : <b>-ins, -ins, -int, -înmes, -întes, -inrent</b> Exemple : venir : je vins, tu vins, ils vint, nous vînmes, vous vîntes, ils vinrent.</p>";
                 } else if (value2 == "compose") {
-                  text = "<h2 style='color: rgb(6,119,144);'>Le Passé Composé</h2><p>Le passé composé est un temps du passé. Dans un récit, il permet de rapporter des évènements qui se sont déroulés et qui sont achevés.<br>Le passé composé est un temps composé formé de <b>l'auxiliaire avoir ou être</b> au <b>présent</b> et du <b>participe passé</b> du verbe conjugué, dont les terminaisons sont, quel que soit la personne, <b>-é</b> pour les verbe du 1er groupe ou bien <b>-i</b> pour les verbes du 2ème groupe ou les verbes en -ir (finir par exemple) ou bien <b>-u</b> pour les verbes en -re et en -oir.<br>Exemple : j'ai mangé, tu as mangé, il a mangé, ...<br>Ou avec l'auxiliaire être : je suis parti, tu es parti, il est parti<br><b>Attention à l'accord du participe passé !</b> Voici ci-dessous deux fiches récapitulatives :<br></p><img src='https://i0.wp.com/data0.eklablog.com/loustics/mod_article2803113_1.jpg?zoom=2'/><img src='https://i0.wp.com/data0.eklablog.com/loustics/mod_article2803113_3.jpg?zoom=2'/>";
+                  text = "<h2 style='color: rgb(6,119,144);'>Le Passé Composé</h2><p>Le passé composé est un temps du passé. Dans un récit, il permet de rapporter des évènements qui se sont déroulés et qui sont achevés.<br>Le passé composé est un temps composé formé de <b>l'auxiliaire avoir ou être</b> au <b>présent</b> et du <b>participe passé</b> du verbe conjugué, dont les terminaisons sont, quel que soit la personne, <b>-é</b> pour les verbe du 1er groupe ou bien <b>-i</b> pour les verbes du 2ème groupe ou les verbes en -ir (finir par exemple) ou bien <b>-u</b> pour les verbes en -re et en -oir.<br>Exemple : j'ai mangé, tu as mangé, il a mangé, ...<br>Ou avec l'auxiliaire être : je suis parti, tu es parti, il est parti<br><b>Attention à l'accord du participe passé !</b> Voici ci-dessous deux fiches récapitulatives :<br></p><img class='petite_img alignLeft' src='https://i0.wp.com/data0.eklablog.com/loustics/mod_article2803113_1.jpg?zoom=2'/><img class='petite_img alignRight'src='https://i0.wp.com/data0.eklablog.com/loustics/mod_article2803113_3.jpg?zoom=2'/>";
                 } else if (value2 == "plusparfait") {
                   text = "<h2 style='color: rgb(6,119,144);'>Le Plus-que-Parfait</h2><p>Le plus-que-parfait est un temps du passé. Il précise qu'une action s'est déroulée avant une autre qui a déjà eu lieu dans le passé. Cette action peut être exprimée avec un passé composé, un imparfait ou un passé simple. Vous pouvez employer le plus-que-parfait lorsque vous souhaitez marquer l'antériorité d'une action terminée par rapport à une autre aussi située dans le passé. Le plus-que-parfait peut également être utilisé lorsque vous transformez une phrase avec un verbe au passé simple ou au passé composé du style direct au style indirect. <br>Le plus-que-parfait est un temps composé formé de <b>l'auxiliaire avoir ou être</b> à <b>l'imparfait</b> et du <b>participe passé</b> du verbe conjugué, dont les terminaisons sont, quel que soit la personne, <b>-é</b> pour les verbe du 1er groupe ou bien <b>-i</b> pour les verbes du 2ème groupe ou les verbes en -ir (finir par exemple) ou bien <b>-u</b> pour les verbes en -re et en -oir.</p>";
                 } else if (value2 == "present") {
@@ -221,15 +234,14 @@
 
               output.innerHTML = text;
             }
-        </script>
+          </script>
         </div>
-    </div>
+      </div>
   </main>
 
   <footer class="text-white py-3 test_color fixed-bottom" style="background-color: rgb(6,119,144)">
         <a href="#" style="color: rgb(255,215,0);" class="text-decoration-none centered-link">Back to top</a>
   </footer>
-
 </body>
 
 </html>
