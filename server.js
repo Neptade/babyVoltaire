@@ -40,3 +40,4 @@ app.get('/', (request, response) => {
 });
 app.use("/home", require("./controllers/home.route"));
 app.use("/auth", require("./controllers/auth.route"));
+app.use("/exercices", require("./controllers/exercices.route"))
