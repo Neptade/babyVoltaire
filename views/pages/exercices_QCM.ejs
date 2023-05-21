@@ -15,40 +15,132 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 <style type="text/css">
-  :root{
+
+  @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+  @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+  
+    :root{
       --blue1:rgb(135,206,235);
       --blue2 : rgb(6,119,144);
       --yellow: rgb(255,215,0);
       --grey :rgb(176,196,222);
   }
-
+  
+  *, *::after, *::before {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+  }
+  
   * {
       margin:0;
       padding: 0;
       font-size: large;
+  }  
+  
+  /* Elements for the nav bar*/
+  button:focus {
+      outline: none;
   }
-
+    
+  ul, li, ol {
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+  }
+    
+    
+  a,
+  .btn {
+      text-decoration: none !important;
+      outline: none !important;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+  }
+  
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  :focus {
+      outline: 0;
+  }
+  
+  .navbar-form input {
+      border: none !important;
+  }
+  
+  .badge {
+      font-weight: 500;
+  }
+  
+  button {
+      border: 0;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+      color: var(--blue2);
+  }
+  
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 15px;
+      padding-left: 15px;
+      font-size: 16px;
+  }
+  
+  .navbar-light .navbar-nav .nav-link:hover {
+      color: #000000;
+  }
+  
+  .logo {
+      width: 40%;
+      float: left;
+  }
+  
+  .login_text{
+      width: 8%;
+      float: left;
+      font-size: 16px;
+      color: #1898b8;
+  }
+  
+  .login_text a{
+      color: #1898b8;
+  }
+  
+  .login_text a:hover{
+      color: #676868;
+  }
+  
+  /*End of the nav bar style*/
   /*Colors of the background*/
   .test_color {
       background-color: rgb(6,119,144);
   }
-
+  
   nav {
       background-color: rgb(255,215,0);
   }
-
+  
   /*For the blur divisions*/
-
+  
   .blur, .blur_div{
       background-color: rgba(255, 255, 255, 0.6);
       border-radius:  25px;
       padding: 2%;
       text-align: justify;
   }
-
-
+  
+  
   /*To aligne items horizontally*/
-
+  
   img.alignLeft{
       margin-right: 15px;
       margin-top: 15px;
@@ -56,7 +148,7 @@
       vertical-align: middle;
       border-radius: 2%;
   }
-
+  
   img.alignRight{
       margin-left: 15px;
       margin-top: 15px;
@@ -64,70 +156,84 @@
       float:right;
       border-radius: 2%;
   }
-
+  
   p.alignLeft{
       text-align: left;
       text-align: justify;
       padding: 2%;
   }
-
+  
   p.alignRight{
       text-align: right;
       text-align: justify;
       padding: 2%;
   }
-
+  
   .center {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-
+  
   .text_same_line{
       display:inline;
   }
-
+  
   .centered-link {
       display: block;
       text-align: center;
   }
-
+  
   /*Text Style */
-
+  
   a.hover{
       color: white;
   }
-
+  
   .container {
       margin-top: 50px;
   }
-</style>
+  </style>
 
 </head>
 
 <body>
   <header>
-    <nav class="navbar fixed-top navbar-light ">
-        <button class="navbar-toggler mx-4" style="color: rgb(6,119,144);" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav mx-5">
-            <li class="nav-item active">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/home/">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">Account</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="#">List Exercices</a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgb(255,215,0);">
+      <a class="logo" href="#"><img src="/images/logo.png" alt="" width="70" height="50" class="d-inline-block align-text-top"></a>
+
+      <!--Sert juste à cacher le bouton -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+
+
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                 <a class="nav-link" href="/home/">ACCUEIL</a>
               </li>
-            <li class="nav-item">
-              <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="./Lecons.ejs">Leçons</a>
-            </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="#">MON COMPTE</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="/exercices/">LISTE D'EXERCICES</a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="/exercices/lecons">MES LEÇONS</a>
+              </li>
           </ul>
-        </div>
-      </nav>
+      </div>
+      <div><a><% if (isAuthenticated) { %>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth/Logout">DECONNEXION</a>
+        </li>
+      <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link font-weight-bold" style="color: rgb(6,119,144);" href="/auth">CONNEXION</a>
+        </li>
+      <% } %></a></div>
+    </nav>
   </header>
 
   <main>
