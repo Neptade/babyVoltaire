@@ -8,12 +8,17 @@ router.get("/", (request, response)=> {
     response.render(filePath)
 })
 router.get("/list", memberListAction);
-
+router.get("/membreData")
 
 async function memberListAction(request, response){
-    var members = await memberRepo.getAllMembers()
+    var membres = await memberRepo.getAllMembers()
+    const filePath = path.join(process.env.rootDirectory, "/views/pages/membresInfo.ejs");
+    response.render(filePath, {"membres": membres});
+}
 
-    response.send(members)
+async function memberDataListAction(request, response){
+    var member = await memberRepo.getMemberData(request.params.mID);
+    
 }
 
 module.exports = router;
