@@ -4,8 +4,8 @@ const memberRepo = require("../repositories/member.repository");
 const path = require('path');
 
 router.get("/", (request, response)=> {
-    const filePath = path.join(process.env.rootDirectory, "/views/home.html")
-    response.sendFile(filePath)
+    const filePath = path.join(process.env.rootDirectory, "/views/pages/home.ejs")
+    response.render(filePath)
 })
 router.get("/list", memberListAction);
 

@@ -11,8 +11,8 @@ const mariadb = require('mariadb');
 
 
 app.get('/', (request, response) => { 
-    const filePath = path.join(process.env.rootDirectory, "home.html")
-    response.sendFile(filePath)
+    const filePath = path.join(process.env.rootDirectory, "/views/pages/home.ejs")
+    response.render(filePath)
 });
 
 app.listen(port, () => {
