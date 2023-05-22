@@ -412,27 +412,27 @@ button {
       <header>CONNEXION</header>
       <form method="post" action="/auth/login">
           <input name="email" type="username" id="email" placeholder="email" required>
-          <input name="password" type="password" id="password" placeholder="Password" required>
+          <input name="password" type="password" id="password" placeholder="mot de passe" required>
           <button type="submit" class="btn btn-dark btn-block">Connexion</button>
       </form>
       <div class="signup">
-        <span class="signup">Don't have an account?
-         <label for="check">Signup</label>
+        <span class="signup">Vous n'avez pas de compte ?
+         <label for="check">En créer un !</label>
         </span>
       </div>
     </div>
     <div class="registration form">
-      <header>Signup</header>
-      <form action="/signup" method="post">
-        <input type="text" placeholder="Enter your email">
-        <input type="password" placeholder="Create a password">
-        <input type="password" placeholder="Confirm your password">
-        <input type="button" class="button" value="Signup">
+      <header>Enregistrez-vous !</header>
+      <form action="/auth/signup" method="post">
+        <input type="text" name="email" placeholder="Votre email" required>
+        <input type="password" name="password" placeholder="Créez un mot de passe" required>
+        <input type="password" name="confirmpsw" placeholder="Confirmez le mot de passe" required>
+        <button type="submit" class="button">Enregistrer</button>
       </form>
       <div class="signup">
-        <span class="signup">Already have an account?
-         <label for="check">Login</label>
-        </span>
+        <span class="signup">Vous avez déjà un compte ?
+         <label for="check">Connexion</label>
+       </span>
       </div>
     </div>
   </div>

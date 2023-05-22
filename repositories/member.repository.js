@@ -1,4 +1,5 @@
 pool = require("../db.js")
+var crypto = require("crypto");
 
 module.exports = {
     async getAllMembers(){
@@ -74,4 +75,20 @@ module.exports = {
             throw err;
         }
     },
+    
+    async signUpMemeber(email, psw){
+        try {
+            let pass = crypto.createHash('sha224').update(psw).digest("hex");
+            let conn = await pool.getConnection();
+            let sql = "INSERT INTO membres (password, email) VALUES (?,?) ";
+            const [rows, fields] = await conn.execute(sql, [pass,email]);
+            conn.release();
+            console.log("strin tets");
+            return rows.affectedRows === 1;
+          }
+          catch (err) {
+            console.log(err);
+            throw err; 
+          }
+    }
 }
