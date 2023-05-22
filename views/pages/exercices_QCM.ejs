@@ -269,13 +269,24 @@
             </table>
             <table class="table">   
                 <tr>
-                    <th colspan="4" class="table_réponse" style="border:none; color: rgb(6,119,144);">Une seule réponse est vraie, choissisez la puis valider :</th>
+                    <th colspan="4" class="table_réponse" style="border:none; color: rgb(6,119,144);">Une seule réponse est vraie, choisisez la puis valider :</th>
                 </tr>
                 <tr>
                     <form action="/exercices/verification/answer" method="POST">
                         <input type="hidden" name="exerciceId" value="<%=exercices[0].qID%>">
                         <div class="row">
-                            <% for (var exo of exercices) { %>
+                            <% 
+                            // Shuffle the exercices array so that the first answer won't always be the right one
+                            function shuffle(array) {
+                                for (let i = array.length - 1; i > 0; i--) {
+                                const j = Math.floor(Math.random() * (i + 1));
+                                [array[i], array[j]] = [array[j], array[i]];
+                                }
+                            }
+                            shuffle(exercices);
+                            
+                            for (var exo of exercices) { 
+                            %>
                             <td style="border:none">
                                 <div class="col">
                                     <input type="checkbox"  class="col-sm-3" id="answer" name="answer" value="<%= exo.reponse%>" onclick="onlyOne(this)"/>
