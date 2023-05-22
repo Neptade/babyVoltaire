@@ -193,7 +193,24 @@
   .container {
       margin-top: 50px;
   }
-  </style>
+
+
+  /*Style exercices_qcm*/
+  .btn_exo{
+    border-radius: 12px;
+    background-color: rgb(6,119,144);
+    color :rgb(255,215,0);
+    padding: 12px 28px;
+    border: none;
+    transition-duration: 0.4s;
+  }
+
+  .btn_exo:hover {
+  background-color: rgb(255,215,0);
+  color: rgb(6,119,144);
+  }
+
+</style>
 
 </head>
 
@@ -241,24 +258,40 @@
         style="background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg')
         ;height: 100vh">
         <div class="container">
-                
-          <table class="table table-striped table-bordered table-hover">
-            <tr>
-                <td>Ennoncé</td>
-            </tr>
-                <tr>
-                    <td><%= exercices[0].ennonce%></td>
+            <h1 style='color: rgb(6,119,144);' class="text-center">Exercices</h1><br>                
+            <table class="table table-bordered">
+                <tr class="table_question" style="background-color:rgb(255,215,0)">
+                    <th colspan="4" style='color: rgb(6,119,144);'>Ennoncé</th>
                 </tr>
-          </table>      
-
-          <form action="/exercices/verification/answer" method="POST">
-            <input type="hidden" name="exerciceId" value="<%=exercices[0].qID%>">
-                <% for (var exo of exercices) { %>
-                    <input type="checkbox" id="answer" name="answer" value="<%= exo.reponse%>" onclick="onlyOne(this)"/>
-                    <label>Réponse : <%= exo.reponse %></label><br>
-                <% } %>
-                <button type="submit" value ="SEND">Valider</button>
-          </form>
+                <tr class="table_question">
+                    <td colspan="4" class="text-center"><%= exercices[0].ennonce%></td>
+                </tr>
+            </table>
+            <table class="table">   
+                <tr>
+                    <th colspan="4" class="table_réponse" style="border:none; color: rgb(6,119,144);">Une seule réponse est vraie, choissisez la puis valider :</th>
+                </tr>
+                <tr>
+                    <form action="/exercices/verification/answer" method="POST">
+                        <input type="hidden" name="exerciceId" value="<%=exercices[0].qID%>">
+                        <div class="row">
+                            <% for (var exo of exercices) { %>
+                            <td style="border:none">
+                                <div class="col">
+                                    <input type="checkbox"  class="col-sm-3" id="answer" name="answer" value="<%= exo.reponse%>" onclick="onlyOne(this)"/>
+                                    <label class="radio-inline">Réponse : <%= exo.reponse %></label><br>
+                                </div>
+                            </td>
+                            <% } %>
+                            <td style="border:none">
+                                <div class="col">
+                                    <button type="submit" value ="SEND" class="form-control col-md-6 btn_exo">Valider</button>
+                                </div>
+                            </td>
+                        </div>
+                    </form>
+                </tr>
+            </table> 
 
             <script>
                 function onlyOne(checkbox) {
