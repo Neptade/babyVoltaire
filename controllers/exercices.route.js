@@ -30,7 +30,8 @@ async function exoCheckAnswer(request, response) {
         request.flash('success','Bonne réponse !');
         
     }else{
-        request.flash('failure','Mauvaise réponse. Réessayez !');
+        var exo = await exoRepo.getOneExercise(id)
+        request.flash('failure','Mauvaise réponse. Réessayez ! La bonne réponse est : '+exo[0].reponse);
     }
     const filePath = path.join(process.env.rootDirectory, "/views/pages/exercices.ejs");
     response.render(filePath);

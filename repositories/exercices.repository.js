@@ -25,5 +25,18 @@ module.exports = {
             console.log(err);
             throw err;
         }
+    },
+
+    async getOneExercise(qID){
+        try{
+            let conn = await pool.getConnection();
+            let sql = "Select * from questions where qID = ?";
+            const [rows, fields] = await conn.execute(sql, [qID]);
+            conn.release();
+            return (rows);
+        } catch (err) {
+            console.log(err);
+            throw err;
+        }
     }
 }
