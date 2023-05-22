@@ -20,7 +20,11 @@ async function memberListAction(request, response){
 }
 
 async function memberDataListAction(request, response){
-    var membre = await memberRepo.getMemberData(request.query.mID);
+    const mID = +(request.user.then((result) => {
+        const mID = result[0].mID;
+        return mID;
+      }));
+    var membre = await memberRepo.getMemberData(mID);
     const filePath = path.join(process.env.rootDirectory, "/views/pages/membreData.ejs");
     response.render(filePath, {"membres": membre});
 }
