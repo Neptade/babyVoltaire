@@ -83,7 +83,6 @@ module.exports = {
             let sql = "INSERT INTO membres (password, email) VALUES (?,?) ";
             const [rows, fields] = await conn.execute(sql, [pass,email]);
             conn.release();
-            console.log("strin tets");
             return rows.affectedRows === 1;
           }
           catch (err) {

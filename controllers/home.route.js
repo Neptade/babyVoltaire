@@ -10,8 +10,6 @@ router.get("/", (request, response)=> {
 })
 router.get("/list", memberListAction);
 router.get("/membreData/",auth.checkAuthentication(), memberDataListAction)
-// router.get("/membre/create", membreCreateAction)
-// router.post("/membre/add", membreAddAction)
 
 async function memberListAction(request, response){
     var membres = await memberRepo.getAllMembers()
@@ -20,11 +18,14 @@ async function memberListAction(request, response){
 }
 
 async function memberDataListAction(request, response){
-    const mID = +(request.user.then((result) => {
-        const mID = result[0].mID;
+    const mID = await request.user.then((result) => {
+        const mID = +(result[0].mID);
         return mID;
-      }));
+    });
     var membre = await memberRepo.getMemberData(mID);
+    if(membre.length === 0){
+        membre = await memberRepo.getOneMembre(mID);
+    }
     const filePath = path.join(process.env.rootDirectory, "/views/pages/membreData.ejs");
     response.render(filePath, {"membres": membre});
 }

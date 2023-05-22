@@ -37,10 +37,10 @@ async function exoCheckAnswer(request, response) {
         request.flash('failure','Mauvaise réponse. Réessayez ! La bonne réponse est : '+exo[0].reponse);
     } 
     if(request.isAuthenticated()){
-        const mID = +(request.user.then((result) => {
-            const mID = result[0].mID;
+        const mID = await request.user.then((result) => {
+            const mID = +(result[0].mID);
             return mID;
-          }));
+        });
         var currentStatus = await travRepo.getOneMemTemp(mID, temps);
         if(currentStatus.length === 0){
             await travRepo.addOneMemTemp(mID, temps);

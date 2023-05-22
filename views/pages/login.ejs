@@ -407,6 +407,24 @@ button {
 <!-- header section end-->
 
   <div class="container">
+     <% if (messages.success) { %>
+          <div class="alert alert-success">
+          <%= messages.success %>
+          </div>
+      <% } %>
+      
+      <% if (messages.failure) { %>
+          <div class="alert alert-danger">
+          <%= messages.failure %>
+          </div>
+      <% } %>
+
+      <% if (messages.error) { %>
+          <div class="alert alert-success">
+          <%= messages.error %>
+          </div>
+      <% } %>
+
     <input type="checkbox" id="check">
     <div class="login form">
       <header>CONNEXION</header>

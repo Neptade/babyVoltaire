@@ -8,7 +8,7 @@ async function initialize(passport){
     const authenticateUser= async (email, password, done) =>{
         const user = await memberRepo.getOneMemberByEmail(email)
         try{
-            if(memberRepo.areValidCredentials(email,password)){
+            if(await memberRepo.areValidCredentials(email,password)){
                 return done(null, user)
             }
             else{
