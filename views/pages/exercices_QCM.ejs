@@ -274,6 +274,7 @@
                 <tr>
                     <form action="/exercices/verification/answer" method="POST">
                         <input type="hidden" name="exerciceId" value="<%=exercices[0].qID%>">
+                        <input type="hidden" name="exerciceTemps" value="<%=exercices[0].tempsVerbe%>">
                         <div class="row">
                             <% 
                             // Shuffle the exercices array so that the first answer won't always be the right one

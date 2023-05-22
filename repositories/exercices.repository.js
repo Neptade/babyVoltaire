@@ -4,7 +4,7 @@ module.exports = {
     async getExercice(tps_exo){
         try{
             let conn = await pool.getConnection();
-            let sql = "Select qID, ennonce, reponse from questions where tempsVerbe = ? ORDER BY RAND()";
+            let sql = "Select qID, ennonce, reponse, tempsVerbe from questions where tempsVerbe = ? ORDER BY RAND()";
             const [rows, fields] = await conn.execute(sql, [tps_exo]);
             conn.release();
             return rows;
