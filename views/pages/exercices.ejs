@@ -238,6 +238,10 @@ a.hover{
 
   <main>
     <div class="bg-image pt-5" 
+
+    
+
+
         style="background-image: url('https://st3.depositphotos.com/3894705/17563/i/600/depositphotos_175633760-stock-photo-seamles-paper-template-with-dots.jpg')
         ;height: 100vh">
         <div class="container">
@@ -301,6 +305,18 @@ a.hover{
                 selectElement.appendChild(option);
                 }
             </script>
+
+        <% if (messages.success) { %>
+            <div class="alert alert-success">
+            <%= messages.success %>
+            </div>
+        <% } %>
+        
+        <% if (messages.failure) { %>
+            <div class="alert alert-danger">
+            <%= messages.failure %>
+            </div>
+        <% } %>
       </div>
     </div>
   </main>
